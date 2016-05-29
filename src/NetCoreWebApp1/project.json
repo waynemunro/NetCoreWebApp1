@@ -1,6 +1,5 @@
-﻿{
+{
   "userSecretsId": "aspnet-NetCoreWebApp1-67efce37-f82d-433b-a3ff-8b1f227e46fd",
-
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0-rc2-3002702",
@@ -39,7 +38,6 @@
       "type": "build"
     }
   },
-
   "tools": {
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview1-final",
@@ -68,7 +66,6 @@
       ]
     }
   },
-
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
@@ -78,27 +75,33 @@
       ]
     }
   },
-
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "debugType": "portable"
   },
-
   "runtimeOptions": {
     "gcServer": true
   },
-
   "publishOptions": {
     "include": [
       "wwwroot",
       "Views",
       "appsettings.json",
-      "web.config"
+      "web.config",
+      "Docker",
+      ".dockerignore"
     ]
   },
-
   "scripts": {
-    "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ],
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    "prepublish": [
+      "npm install",
+      "bower install",
+      "gulp clean",
+      "gulp min"
+    ],
+    "postpublish": [
+      "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
+    ]
   }
 }
